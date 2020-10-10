@@ -1,0 +1,14 @@
+{
+    "name": "stoffel/console-headline",
+    "description": "Headline helper for Symfony Console using FIGlet Fonts",
+    "require": {
+        "php": "^7.4",
+        "symfony/console": "dev-master",
+        "laminas/laminas-text": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stoffel\\Console\\Headline\\": "src/"
+        }
+    }
+}

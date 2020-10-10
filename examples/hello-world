@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+
+use Laminas\Text\Figlet\Figlet;
+use Stoffel\Console\Headline\HeadlineHelper;
+use Symfony\Component\Console\Color;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\SingleCommandApplication;
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+(new SingleCommandApplication())
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
+
+        HeadlineHelper::create($output)
+            ->setText('Hello World!')
+            ->setColor(new Color('#00FF00', '', ['bold']))
+            ->write();
+
+        HeadlineHelper::create($output)
+            ->setText('Hello World!')
+            ->setColor(new Color('#FFFF00', '', ['blink']))
+            ->setFigletOptions([
+                'justification' => Figlet::JUSTIFICATION_RIGHT,
+            ])
+            ->write();
+
+        HeadlineHelper::create($output)
+            ->setText('Hello World!')
+            ->setColor(new Color('#000000', '#FF0000', ['bold']))
+            ->setFigletOptions([
+                'justification' => Figlet::JUSTIFICATION_LEFT,
+            ])
+            ->write();
+
+    })
+    ->run();
+
