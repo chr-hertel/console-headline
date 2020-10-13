@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f41c2d62ace24c5ac5d696a559bfe1e",
+    "content-hash": "98bab2902d48e4c0cef4cb3b314a5ad6",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -329,16 +329,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "dev-master",
+            "version": "5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "9df6bfc5afd969d972f005a068576e48a0fccec0"
+                "reference": "5d5ff78dc06109b534866efe6918973581ca68b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/9df6bfc5afd969d972f005a068576e48a0fccec0",
-                "reference": "9df6bfc5afd969d972f005a068576e48a0fccec0",
+                "url": "https://api.github.com/repos/symfony/console/zipball/5d5ff78dc06109b534866efe6918973581ca68b2",
+                "reference": "5d5ff78dc06109b534866efe6918973581ca68b2",
                 "shasum": ""
             },
             "require": {
@@ -376,9 +376,7 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "5.2-dev"
-                }
+                "branch-version": "5.2"
             },
             "autoload": {
                 "psr-4": {
@@ -424,7 +422,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-03T14:00:31+00:00"
+            "time": "2020-10-13T13:22:54+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

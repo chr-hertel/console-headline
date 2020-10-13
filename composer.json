@@ -1,9 +1,17 @@
 {
     "name": "stoffel/console-headline",
     "description": "Headline helper for Symfony Console using FIGlet Fonts",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Hertel",
+            "email": "mail@christopher-hertel.de"
+        }
+    ],
     "require": {
         "php": "^7.4",
-        "symfony/console": "dev-master",
+        "symfony/console": "^5.2@dev",
         "laminas/laminas-text": "^2.7"
     },
     "autoload": {
