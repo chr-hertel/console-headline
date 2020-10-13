@@ -17,9 +17,9 @@ class HeadlineHelper
     private Color $color;
     private array $options;
 
-    private function __construct(OutputInterface $output = null)
+    private function __construct(OutputInterface $output)
     {
-        $this->output = $output ?? new NullOutput();
+        $this->output = $output;
         $this->color = new Color();
 
         $this->options = [
@@ -28,9 +28,9 @@ class HeadlineHelper
         ];
     }
 
-    public static function create(OutputInterface $output): self
+    public static function create(OutputInterface $output = null): self
     {
-        return new self($output);
+        return new self($output ?? new NullOutput());
     }
 
     public function setText(string $text): self
@@ -54,12 +54,29 @@ class HeadlineHelper
         return $this;
     }
 
+    public function getHeight(): int
+    {
+        $renderedText = $this->render();
+
+        return mb_substr_count($renderedText, PHP_EOL);
+    }
+
+    public function getWidth(): int
+    {
+        $renderedText = $this->render();
+
+        return max(array_map('mb_strlen', explode(PHP_EOL, $renderedText)));
+    }
+
+    public function render(): string
+    {
+        return (new Figlet($this->options))->render($this->text);
+    }
+
     public function write(): void
     {
-        $figlet = new Figlet($this->options);
-
         $this->output->write(
-            $this->color->apply($figlet->render($this->text))
+            $this->color->apply($this->render())
         );
     }
 }
